@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en" ng-app="">
+<head>
+    <meta charset="UTF-8">
+    <title>ngMadLibs</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="assets/js/libs/angular.min.js" type="text/javascript"></script>
+</head>
+<body ng-init="female_name='Male name';job_title='Job title';tedious_task='Tedious task';dirty_task='Dirty task';celebrity='Celebrity';useless_skill='Useless skill';obnoxious_celebrity='Obnoxious celebrity';huge_number='Huge number';adjective='Adjective'">
+	<div class="wrapper">
+		<header>
+			<div class="header-left">
+				<img class="header-left__img" src="assets/images/mad-lib-happy-face.png" alt="Smiley face image">
+			</div>
+			<div class="header-right">
+				<img class="header-right__logo" src="assets/images/ng-mad-libs-logo.png" alt="ngMadLibs logo">
+				<h1 class="header__heading">Automate This!</h1>
+			</div>
+		</header>
+
+		<section class="words">
+			<h2 class="words__heading">Provide the following words:</h2>
+			<ul class="words__list">
+				<li class="words__item-wrapper">
+					<input type="text" class="words__item" ng-model="female_name">
+				</li>
+				<li class="words__item-wrapper">
+					<input type="text" class="words__item" ng-model="job_title">
+				</li>
+				<li class="words__item-wrapper">
+					<input type="text" class="words__item" ng-model="tedious_task">
+				</li>
+				<li class="words__item-wrapper">
+					<input type="text" class="words__item" ng-model="dirty_task">
+				</li>
+				<li class="words__item-wrapper">
+					<input type="text" class="words__item" ng-model="celebrity">
+				</li>
+				<li class="words__item-wrapper">
+					<input type="text" class="words__item" ng-model="useless_skill">
+				</li>
+				<li class="words__item-wrapper">
+					<input type="text" class="words__item" ng-model="obnoxious_celebrity">
+				</li>
+				<li class="words__item-wrapper">
+					<input type="text" class="words__item" ng-model="huge_number">
+				</li>
+				<li class="words__item-wrapper">
+					<input type="text" class="words__item" ng-model="adjective">
+				</li>
+			</ul>
+		</section>
+
+		<section class="main-content">
+			<p class="main-content__text"><span>{{ female_name }}</span> was a {{ job_title }} who loved technology. Although she loved parts of her job, she absolutely hated {{ tedious_task }} and {{ dirty_task }}. So, {{female_name}} met with her life mentor {{ celebrity }} who told her to learn how to {{ useless_skill }} with Thinkful. Thinkful didn't offer a course on {{ useless_skill }} so she studied programming instead. </p>
+
+			<p class="main-content__text">What a great decision! With her new skills, {{ female_name }} built a(n) {{ adjective }} robot named {{ obnoxious_celebrity }} that not only loved {{ dirty_task }} but did it {{ huge_number }} faster.</p>
+
+		</section>
+			
+	</div>
+</body>
+</html>
