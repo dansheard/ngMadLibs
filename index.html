@@ -1,12 +1,13 @@
 <!doctype html>
-<html lang="en" ng-app="">
+<html lang="en" ng-app="MadLibs">
 <head>
     <meta charset="UTF-8">
     <title>ngMadLibs</title>
     <link rel="stylesheet" href="assets/css/styles.css">
     <script src="assets/js/libs/angular.min.js" type="text/javascript"></script>
+    <script src="assets/js/MadLibs.js" type="text/javascript"></script>
 </head>
-<body ng-init="female_name='Male name';job_title='Job title';tedious_task='Tedious task';dirty_task='Dirty task';celebrity='Celebrity';useless_skill='Useless skill';obnoxious_celebrity='Obnoxious celebrity';huge_number='Huge number';adjective='Adjective'">
+<body ng-controller="datactrl">
 	<div class="wrapper">
 		<header>
 			<div class="header-left">
@@ -19,42 +20,45 @@
 		</header>
 
 		<section class="words">
+
 			<h2 class="words__heading">Provide the following words:</h2>
-			<ul class="words__list">
-				<li class="words__item-wrapper">
-					<input type="text" class="words__item" ng-model="female_name">
-				</li>
-				<li class="words__item-wrapper">
-					<input type="text" class="words__item" ng-model="job_title">
-				</li>
-				<li class="words__item-wrapper">
-					<input type="text" class="words__item" ng-model="tedious_task">
-				</li>
-				<li class="words__item-wrapper">
-					<input type="text" class="words__item" ng-model="dirty_task">
-				</li>
-				<li class="words__item-wrapper">
-					<input type="text" class="words__item" ng-model="celebrity">
-				</li>
-				<li class="words__item-wrapper">
-					<input type="text" class="words__item" ng-model="useless_skill">
-				</li>
-				<li class="words__item-wrapper">
-					<input type="text" class="words__item" ng-model="obnoxious_celebrity">
-				</li>
-				<li class="words__item-wrapper">
-					<input type="text" class="words__item" ng-model="huge_number">
-				</li>
-				<li class="words__item-wrapper">
-					<input type="text" class="words__item" ng-model="adjective">
-				</li>
-			</ul>
+			<form name="madLibsForm" ng-submit="submit(); submitted = true;" novalidate>
+				<ul class="words__list">
+					<li class="words__item-wrapper">
+						<input type="text" class="words__item" ng-model="model.female_name" placeholder="female name" required>
+					</li>
+					<li class="words__item-wrapper">
+						<input type="text" class="words__item" ng-model="model.job_title" placeholder="job title" required>
+					</li>
+					<li class="words__item-wrapper">
+						<input type="text" class="words__item" ng-model="model.tedious_task" placeholder="tedious task" required>
+					</li>
+					<li class="words__item-wrapper">
+						<input type="text" class="words__item" ng-model="model.dirty_task" placeholder="dirty task" required>
+					</li>
+					<li class="words__item-wrapper">
+						<input type="text" class="words__item" ng-model="model.celebrity" placeholder="celebrity" required>
+					</li>
+					<li class="words__item-wrapper">
+						<input type="text" class="words__item" ng-model="model.useless_skill" placeholder="useless skill" required>
+					</li>
+					<li class="words__item-wrapper">
+						<input type="text" class="words__item" ng-model="model.obnoxious_celebrity" placeholder="obnoxious celebrity" required>
+					</li>
+					<li class="words__item-wrapper">
+						<input type="text" class="words__item" ng-model="model.huge_number" placeholder="huge number" required>
+					</li>
+					<li class="words__item-wrapper">
+						<input type="text" class="words__item" ng-model="model.adjective" placeholder="adjective" required>
+					</li>
+				</ul>
+			</form>
 		</section>
 
 		<section class="main-content">
-			<p class="main-content__text"><span>{{ female_name }}</span> was a {{ job_title }} who loved technology. Although she loved parts of her job, she absolutely hated {{ tedious_task }} and {{ dirty_task }}. So, {{female_name}} met with her life mentor {{ celebrity }} who told her to learn how to {{ useless_skill }} with Thinkful. Thinkful didn't offer a course on {{ useless_skill }} so she studied programming instead. </p>
+			<p class="main-content__text"><span>{{ model.female_name }}</span> was a {{ model.job_title }} who loved technology. Although she loved parts of her job, she absolutely hated {{ model.tedious_task }} and {{ model.dirty_task }}. So, {{ model.female_name }} met with her life mentor {{ model.celebrity }} who told her to learn how to {{ model.useless_skill }} with Thinkful. Thinkful didn't offer a course on {{ model.useless_skill }} so she studied programming instead. </p>
 
-			<p class="main-content__text">What a great decision! With her new skills, {{ female_name }} built a(n) {{ adjective }} robot named {{ obnoxious_celebrity }} that not only loved {{ dirty_task }} but did it {{ huge_number }} faster.</p>
+			<p class="main-content__text">What a great decision! With her new skills, {{ model.female_name }} built a(n) {{ model.adjective }} robot named {{ model.obnoxious_celebrity }} that not only loved {{ model.dirty_task }} but did it {{ model.huge_number }} faster.</p>
 
 		</section>
 			
