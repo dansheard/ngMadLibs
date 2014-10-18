@@ -6,11 +6,20 @@
 
 body {
 	padding: 50px 0;
+	font-family: arial, verdana, helvetica, sans-serif;
 }
 
 header {
 	border-bottom: 4px solid #333;
 	overflow: hidden;
+}
+
+fieldset {
+	border: none;
+}
+
+legend {
+	font-weight: bold;
 }
 
 .wrapper {
@@ -49,6 +58,11 @@ header {
 .words {
 	padding: 40px 100px;
 	border-bottom: 4px solid #333;
+}
+
+.words__gender-select {
+	display: inline-block;
+	margin: 10px 10px 10px 0;
 }
 
 .words__heading {

@@ -23,9 +23,21 @@
 
 			<h2 class="words__heading">Provide the following words:</h2>
 			<form name="madLibsForm" ng-submit="submit(); submitted = true;" novalidate>
+				
+				<div class="words__gender-select">
+					<fieldset>
+						<legend>Please select a gender:</legend>
+						<label for="sexMale">Male:</label>
+						<input id="sexMale" class="words__gender-select" type="radio" name="sex" value="male" ng-model="input.gender" checked>
+
+						<label for="sexFemale">Female:</label>
+						<input id="sexFemale" class="words__gender-select" type="radio" name="sex" value="female" ng-model="input.gender">
+					</fieldset>
+				</div>
+
 				<ul class="words__list">
 					<li class="words__item-wrapper">
-						<input type="text" class="words__item" ng-model="model.female_name" placeholder="female name" required>
+						<input type="text" class="words__item" ng-model="model.person_name" placeholder="person name" required>
 					</li>
 					<li class="words__item-wrapper">
 						<input type="text" class="words__item" ng-model="model.job_title" placeholder="job title" required>
@@ -56,9 +68,9 @@
 		</section>
 
 		<section class="main-content">
-			<p class="main-content__text"><span>{{ model.female_name }}</span> was a {{ model.job_title }} who loved technology. Although she loved parts of her job, she absolutely hated {{ model.tedious_task }} and {{ model.dirty_task }}. So, {{ model.female_name }} met with her life mentor {{ model.celebrity }} who told her to learn how to {{ model.useless_skill }} with Thinkful. Thinkful didn't offer a course on {{ model.useless_skill }} so she studied programming instead. </p>
+			<p class="main-content__text"><span>{{ model.person_name }}</span> was a {{ model.job_title }} who loved technology. Although {{ (input.gender == 'male' ) ? 'he' : 'she' }} loved parts of {{ (input.gender == 'male' ) ? 'his' : 'her' }} job, {{ (input.gender == 'male' ) ? 'he' : 'she' }} absolutely hated {{ model.tedious_task }} and {{ model.dirty_task }}. So, {{ model.female_name }} met with {{ (input.gender == 'male' ) ? 'his' : 'her' }} life mentor {{ model.celebrity }} who told {{ (input.gender == 'male' ) ? 'his' : 'her' }} to learn how to {{ model.useless_skill }} with Thinkful. Thinkful didn't offer a course on {{ model.useless_skill }} so {{ (input.gender == 'male' ) ? 'he' : 'she' }} studied programming instead. </p>
 
-			<p class="main-content__text">What a great decision! With her new skills, {{ model.female_name }} built a(n) {{ model.adjective }} robot named {{ model.obnoxious_celebrity }} that not only loved {{ model.dirty_task }} but did it {{ model.huge_number }} faster.</p>
+			<p class="main-content__text">What a great decision! With {{ (input.gender == 'male' ) ? 'his' : 'her' }} new skills, {{ model.female_name }} built a(n) {{ model.adjective }} robot named {{ model.obnoxious_celebrity }} that not only loved {{ model.dirty_task }} but did it {{ model.huge_number }} faster.</p>
 
 		</section>
 			

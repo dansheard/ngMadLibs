@@ -1,6 +1,6 @@
 angular.module('MadLibs', [])
 			 	.controller('datactrl', function($scope) {
-					$scope.model = {female_name: '',
+					$scope.model = {person_name: '',
 													job_title: '',
 													tedious_task: '',
 													dirty_task: '',
