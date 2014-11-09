@@ -60,6 +60,10 @@ legend {
 	border-bottom: 4px solid #333;
 }
 
+.words__form {
+	border-bottom: 1px solid #333;
+}
+
 .words__gender-select {
 	display: inline-block;
 	margin: 10px 10px 10px 0;
@@ -72,6 +76,7 @@ legend {
 .words__list {
 	display: block;
 	width: 600px;
+	margin-bottom: 10px;
 }
 
 .words__item-wrapper {
@@ -86,6 +91,12 @@ legend {
 	border: 1px solid #333;
 	padding: 5px;
 	display: inline-block;
+}
+
+.words__button {
+	display: block;
+	float: right;
+	margin-top: 10px;
 }
 
 .main-content {
