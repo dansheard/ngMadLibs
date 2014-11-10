@@ -9,7 +9,7 @@
     <script src="assets/js/MadLibs.js" type="text/javascript"></script>
     <script type="text/ng-template" id="my-custom-messages">
 			<span class="error" ng-message="required">Field is required!</span>
-			<span class="error" ng-message="number">Please enter a valid number</span>
+			<span class="error" ng-message="number">Not a valid number</span>
 		</script>
 </head>
 <body ng-controller="FormCtrl">
@@ -33,10 +33,10 @@
 					<fieldset>
 						<legend>Please select a gender:</legend>
 						<label for="sexMale">Male:</label>
-						<input id="sexMale" class="words__gender-select" type="radio" name="gender" ng-value="male" ng-model="input.gender">
+						<input id="sexMale" class="words__gender-select" type="radio" name="gender" ng-value="male" ng-model="model.gender">
 
 						<label for="sexFemale">Female:</label>
-						<input id="sexFemale" class="words__gender-select" type="radio" name="gender" ng-value="female" ng-model="input.gender">
+						<input id="sexFemale" class="words__gender-select" type="radio" name="gender" ng-value="female" ng-model="model.gender">
 					</fieldset>
 				</div>
 
@@ -44,47 +44,65 @@
 
 					<li class="words__item-wrapper">
 						<input type="text" class="words__item" ng-model="model.personName" name="personName" placeholder="person name" required>
-						<div ng-if="madLibsForm.$submitted" ng-messages="madLibsForm.personName.$error" ng-messages-include="my-custom-messages"></div>
+						<div class="words__item-error">
+							<div ng-if="madLibsForm.$submitted" ng-messages="madLibsForm.personName.$error" ng-messages-include="my-custom-messages"></div>
+						</div>
 					</li>
 
 					<li class="words__item-wrapper">
-						<input type="text" class="words__item" ng-model="model.JobTitle" name="JobTitle" placeholder="job title" required>
-						<div ng-if="madLibsForm.$submitted" ng-messages="madLibsForm.JobTitle.$error" ng-messages-include="my-custom-messages"></div>
+						<input type="text" class="words__item" ng-model="model.jobTitle" name="jobTitle" placeholder="job title" required>
+						<div class="words__item-error">
+							<div ng-if="madLibsForm.$submitted" ng-messages="madLibsForm.jobTitle.$error" ng-messages-include="my-custom-messages"></div>
+						</div>
 					</li>
 
 					<li class="words__item-wrapper">
 						<input type="text" class="words__item" ng-model="model.tediousTask" name="tediousTask" placeholder="tedious task" required>
-						<div ng-if="madLibsForm.$submitted" ng-messages="madLibsForm.tediousTask.$error" ng-messages-include="my-custom-messages"></div>
+						<div class="words__item-error">
+							<div ng-if="madLibsForm.$submitted" ng-messages="madLibsForm.tediousTask.$error" ng-messages-include="my-custom-messages"></div>
+						</div>
 					</li>
 
 					<li class="words__item-wrapper">
 						<input type="text" class="words__item" ng-model="model.dirtyTask" name="dirtyTask" placeholder="dirty task" required>
-						<div ng-if="madLibsForm.$submitted" ng-messages="madLibsForm.dirtyTask.$error" ng-messages-include="my-custom-messages"></div>
+						<div class="words__item-error">
+							<div ng-if="madLibsForm.$submitted" ng-messages="madLibsForm.dirtyTask.$error" ng-messages-include="my-custom-messages"></div>
+						</div>
 					</li>
 
 					<li class="words__item-wrapper">
 						<input type="text" class="words__item" ng-model="model.celebrity" name="celebrity" placeholder="celebrity" required>
-						<div ng-if="madLibsForm.$submitted" ng-messages="madLibsForm.celebrity.$error" ng-messages-include="my-custom-messages"></div>
+						<div class="words__item-error">
+							<div ng-if="madLibsForm.$submitted" ng-messages="madLibsForm.celebrity.$error" ng-messages-include="my-custom-messages"></div>
+						</div>
 					</li>
 
 					<li class="words__item-wrapper">
 						<input type="text" class="words__item" ng-model="model.uselessSkill" name="uselessSkill" placeholder="useless skill" required>
-						<div ng-if="madLibsForm.$submitted" ng-messages="madLibsForm.uselessSkill.$error" ng-messages-include="my-custom-messages"></div>
+						<div class="words__item-error">
+							<div ng-if="madLibsForm.$submitted" ng-messages="madLibsForm.uselessSkill.$error" ng-messages-include="my-custom-messages"></div>
+						</div>
 					</li>
 
 					<li class="words__item-wrapper">
 						<input type="text" class="words__item" ng-model="model.obnoxiousCelebrity" name="obnoxiousCelebrity" placeholder="obnoxious celebrity" required>
-						<div ng-if="madLibsForm.$submitted" ng-messages="madLibsForm.obnoxiousCelebrity.$error" ng-messages-include="my-custom-messages"></div>
+						<div class="words__item-error">
+							<div ng-if="madLibsForm.$submitted" ng-messages="madLibsForm.obnoxiousCelebrity.$error" ng-messages-include="my-custom-messages"></div>
+						</div>
 					</li>
 
 					<li class="words__item-wrapper">
 						<input type="number" class="words__item" ng-model="model.hugeNumber" name="hugeNumber" placeholder="huge number" min="1" required>
-						<div ng-if="madLibsForm.$submitted" ng-messages="madLibsForm.hugeNumber.$error" ng-messages-include="my-custom-messages"></div>
+						<div class="words__item-error">
+							<div ng-if="madLibsForm.$submitted" ng-messages="madLibsForm.hugeNumber.$error" ng-messages-include="my-custom-messages"></div>
+						</div>
 					</li>
 
 					<li class="words__item-wrapper">
 						<input type="text" class="words__item" ng-model="model.adjective" name="adjective" placeholder="adjective" required>
-						<div ng-if="madLibsForm.$submitted" ng-messages="madLibsForm.adjective.$error" ng-messages-include="my-custom-messages"></div>
+						<div class="words__item-error">
+							<div ng-if="madLibsForm.$submitted" ng-messages="madLibsForm.adjective.$error" ng-messages-include="my-custom-messages"></div>
+						</div>
 					</li>
 				</ul>
 
@@ -93,9 +111,9 @@
 		</section>
 
 		<section class="main-content" ng-show="showMadLibs">
-			<p class="main-content__text"><span>{{ model.personName }}</span> was a {{ model.jobTitle }} who loved technology. Although {{ (input.gender == 'male' ) ? 'he' : 'she' }} loved parts of {{ (input.gender == 'male' ) ? 'his' : 'her' }} job, {{ (input.gender == 'male' ) ? 'he' : 'she' }} absolutely hated {{ model.tediousTask }} and {{ model.dirty_task }}. So, {{ model.female_name }} met with {{ (input.gender == 'male' ) ? 'his' : 'her' }} life mentor {{ model.celebrity }} who told {{ (input.gender == 'male' ) ? 'his' : 'her' }} to learn how to {{ model.uselessSkill }} with Thinkful. Thinkful didn't offer a course on {{ model.uselessSkill }} so {{ (input.gender == 'male' ) ? 'he' : 'she' }} studied programming instead. </p>
+			<p class="main-content__text"><span>{{ model.personName }}</span> was a {{ model.jobTitle }} who loved technology. Although {{ (input.gender == 'male' ) ? 'he' : 'she' }} loved parts of {{ (input.gender == 'male' ) ? 'his' : 'her' }} job, {{ (input.gender == 'male' ) ? 'he' : 'she' }} absolutely hated {{ model.tediousTask }} and {{ model.dirtyTask }}. So, {{ model.personName }} met with {{ (input.gender == 'male' ) ? 'his' : 'her' }} life mentor {{ model.celebrity }} who told {{ (input.gender == 'male' ) ? 'his' : 'her' }} to learn how to {{ model.uselessSkill }} with Thinkful. Thinkful didn't offer a course on {{ model.uselessSkill }} so {{ (input.gender == 'male' ) ? 'he' : 'she' }} studied programming instead. </p>
 
-			<p class="main-content__text">What a great decision! With {{ (input.gender == 'male' ) ? 'his' : 'her' }} new skills, {{ model.femaleName }} built a(n) {{ model.adjective }} robot named {{ model.obnoxiousCelebrity }} that not only loved {{ model.dirtyTask }} but did it {{ model.hugeNumber }} times faster.</p>
+			<p class="main-content__text">What a great decision! With {{ (input.gender == 'male' ) ? 'his' : 'her' }} new skills, {{ model.personName }} built a(n) {{ model.adjective }} robot named {{ model.obnoxiousCelebrity }} that not only loved {{ model.dirtyTask }} but did it {{ model.hugeNumber }} times faster.</p>
 
 			<input class="words__button" ng-click="reset()" type="button" value="Reset" />
 

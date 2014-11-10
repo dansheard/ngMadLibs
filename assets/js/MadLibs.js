@@ -1,5 +1,6 @@
 angular.module('MadLibs', ['ngMessages'])
   .controller('FormCtrl', ['$scope', function($scope) {
+  	$scope.submitted = false;
 
     $scope.submit = function(user) {
       if ( $scope.madLibsForm.$valid ) {
@@ -17,6 +18,7 @@ angular.module('MadLibs', ['ngMessages'])
 	  };
 
     $scope.model = {
+    	gender: 'male',
 			personName: '',
 			jobTitle: '',
 			tediousTask: '',
