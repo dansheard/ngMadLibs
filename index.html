@@ -33,10 +33,9 @@
 					<fieldset>
 						<legend>Please select a gender:</legend>
 						<label for="sexMale">Male:</label>
-						<input id="sexMale" class="words__gender-select" type="radio" name="gender" ng-value="male" ng-model="model.gender">
-
+						<input type="radio" ng-model="model.gender" value="male" checked>	
 						<label for="sexFemale">Female:</label>
-						<input id="sexFemale" class="words__gender-select" type="radio" name="gender" ng-value="female" ng-model="model.gender">
+						<input type="radio" ng-model="model.gender" value="female">
 					</fieldset>
 				</div>
 
@@ -111,9 +110,9 @@
 		</section>
 
 		<section class="main-content" ng-show="showMadLibs">
-			<p class="main-content__text"><span>{{ model.personName }}</span> was a {{ model.jobTitle }} who loved technology. Although {{ (input.gender == 'male' ) ? 'he' : 'she' }} loved parts of {{ (input.gender == 'male' ) ? 'his' : 'her' }} job, {{ (input.gender == 'male' ) ? 'he' : 'she' }} absolutely hated {{ model.tediousTask }} and {{ model.dirtyTask }}. So, {{ model.personName }} met with {{ (input.gender == 'male' ) ? 'his' : 'her' }} life mentor {{ model.celebrity }} who told {{ (input.gender == 'male' ) ? 'his' : 'her' }} to learn how to {{ model.uselessSkill }} with Thinkful. Thinkful didn't offer a course on {{ model.uselessSkill }} so {{ (input.gender == 'male' ) ? 'he' : 'she' }} studied programming instead. </p>
+			<p class="main-content__text"><span>{{ model.personName }}</span> was a {{ model.jobTitle }} who loved technology. Although {{ sheHe() }} loved parts of the job, {{ sheHe() }} absolutely hated {{ model.tediousTask }} and {{ model.dirtyTask }}. So, {{ model.personName }} met with {{ herHis() }} life mentor {{ model.celebrity }} who told {{ herHim() }} to learn how to {{ model.uselessSkill }} with Thinkful. Thinkful didn't offer a course on {{ model.uselessSkill }} so {{ sheHe() }} studied programming instead. </p>
 
-			<p class="main-content__text">What a great decision! With {{ (input.gender == 'male' ) ? 'his' : 'her' }} new skills, {{ model.personName }} built a(n) {{ model.adjective }} robot named {{ model.obnoxiousCelebrity }} that not only loved {{ model.dirtyTask }} but did it {{ model.hugeNumber }} times faster.</p>
+			<p class="main-content__text">What a great decision! With {{ herHis() }} new skills, {{ model.personName }} built a(n) {{ model.adjective }} robot named {{ model.obnoxiousCelebrity }} that not only loved {{ model.dirtyTask }} but did it {{ model.hugeNumber }} times faster.</p>
 
 			<input class="words__button" ng-click="reset()" type="button" value="Reset" />
 

@@ -2,22 +2,7 @@ angular.module('MadLibs', ['ngMessages'])
   .controller('FormCtrl', ['$scope', function($scope) {
   	$scope.submitted = false;
 
-    $scope.submit = function(user) {
-      if ( $scope.madLibsForm.$valid ) {
-      	$scope.showMadLibs = true;
-			} else {
-				$scope.showMadLibs = false;
-			}
-    };
-
-    $scope.reset = function() {
-	    $scope.model = {};
-	    $scope.madLibsForm.$setPristine();
-	    $scope.submitted = false;
-	    $scope.showMadLibs = false;
-	  };
-
-    $scope.model = {
+  	$scope.model = {
     	gender: 'male',
 			personName: '',
 			jobTitle: '',
@@ -30,4 +15,39 @@ angular.module('MadLibs', ['ngMessages'])
 			adjective: '' 
 		}
 
+    $scope.submit = function(user) {
+      if ( $scope.madLibsForm.$valid ) {
+      	$scope.showMadLibs = true;
+			} else {
+				$scope.showMadLibs = false;
+			}
+    };
+
+    $scope.sheHe = function() {
+      if ($scope.model.gender == 'female') {
+          return "she";
+      }
+      return "he";
+    };
+
+    $scope.herHis = function() {
+      if ($scope.model.gender == 'female') {
+          return "her";
+      }
+      return "his";
+    };
+
+    $scope.herHim = function() {
+      if ($scope.model.gender == 'female') {
+          return "her";
+      }
+      return "him";
+    };
+
+    $scope.reset = function() {
+	    $scope.model = {};
+	    $scope.madLibsForm.$setPristine();
+	    $scope.submitted = false;
+	    $scope.showMadLibs = false;
+	  };
   }]);
