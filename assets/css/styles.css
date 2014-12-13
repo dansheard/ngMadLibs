@@ -161,3 +161,47 @@ legend {
 .ng-submitted input.ng-invalid {
 	border: 1px solid red;
 }
+
+.main-content.ng-hide-add {
+	-webkit-transition: all 0s ease-out;
+	   -moz-transition: all 0s ease-out;
+	    -ms-transition: all 0s ease-out;
+	     -o-transition: all 0s ease-out;
+	        transition: all 0s ease-out;
+	        opacity: 1;
+}
+
+.main-content.ng-hide-remove {
+	-webkit-transition: all 1s ease-out;
+	   -moz-transition: all 1s ease-out;
+	    -ms-transition: all 1s ease-out;
+	     -o-transition: all 1s ease-out;
+	        transition: all 1s ease-out;
+	        opacity: 1;
+}
+
+.main-content.ng-hide {
+	opacity: 0
+}
+
+.words.ng-hide-add {
+	-webkit-transition: all 0s ease-out;
+	   -moz-transition: all 0s ease-out;
+	    -ms-transition: all 0s ease-out;
+	     -o-transition: all 0s ease-out;
+	        transition: all 0s ease-out;
+	        opacity: 1;
+}
+
+.words.ng-hide-remove {
+	-webkit-transition: all 1s ease-out;
+	   -moz-transition: all 1s ease-out;
+	    -ms-transition: all 1s ease-out;
+	     -o-transition: all 1s ease-out;
+	        transition: all 1s ease-out;
+	        opacity: 1;
+}
+
+.words.ng-hide {
+	opacity: 0
+}

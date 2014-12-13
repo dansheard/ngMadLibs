@@ -1,6 +1,7 @@
-angular.module('MadLibs', ['ngMessages'])
+angular.module('MadLibs', ['ngMessages', 'ngAnimate'])
   .controller('FormCtrl', ['$scope', function($scope) {
   	$scope.submitted = false;
+    $scope.formInputs = true;
 
   	$scope.model = {
     	gender: 'male',
@@ -18,7 +19,9 @@ angular.module('MadLibs', ['ngMessages'])
     $scope.submit = function(user) {
       if ( $scope.madLibsForm.$valid ) {
       	$scope.showMadLibs = true;
+        $scope.formInputs = false;
 			} else {
+        $scope.formInputs = true;
 				$scope.showMadLibs = false;
 			}
     };
@@ -49,5 +52,6 @@ angular.module('MadLibs', ['ngMessages'])
 	    $scope.madLibsForm.$setPristine();
 	    $scope.submitted = false;
 	    $scope.showMadLibs = false;
+      $scope.formInputs = true;
 	  };
   }]);
